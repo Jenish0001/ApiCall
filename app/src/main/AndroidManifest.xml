@@ -16,13 +16,23 @@
         android:theme="@style/Theme.ApiCall"
         tools:targetApi="31">
         <activity
-            android:name=".retrofitgetapi.retrofitgetApi"
+            android:name=".pagination.PagenationApi"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".retrofitpostapi.retrofitPostAPi"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".retrofitgetapi.retrofitgetApi"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".volleypostapi.volleypostApi"

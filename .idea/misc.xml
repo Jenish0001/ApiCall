@@ -4,10 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/activity_main.xml" value="0.16979166666666667" />
+        <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/activity_pagenation_api.xml" value="0.18385416666666668" />
+        <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/activity_retrofit_post_api.xml" value="0.18385416666666668" />
         <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/activity_retrofitget_api.xml" value="0.14666666666666667" />
         <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/activity_volleygetapi.xml" value="0.18385416666666668" />
         <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/activity_volleypost_api.xml" value="0.16979166666666667" />
         <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/itemvollyget.xml" value="0.18385416666666668" />
+        <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/pagenationitemview.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/postproductitem.xml" value="0.1828125" />
         <entry key="..\:/AndroidStudioProject master/ApiCall/app/src/main/res/layout/retrofitgetitem.xml" value="0.18385416666666668" />
       </map>
     </option>

@@ -12,12 +12,10 @@ class adptervolleyget(val volleygetapi: volleygetapi, val list: ArrayList<volley
     RecyclerView.Adapter<adptervolleyget.viewData>() {
 
     class viewData(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         var f_userID = itemView.findViewById<TextView>(R.id.f_userID)
         var f_id = itemView.findViewById<TextView>(R.id.f_id)
         var f_title = itemView.findViewById<TextView>(R.id.f_title)
         var f_body = itemView.findViewById<TextView>(R.id.f_body)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewData {

@@ -18,8 +18,7 @@ class volleypostApi : AppCompatActivity() {
 
     private fun volleypost(name: String, job: String) {
         var api = "https://reqres.in/api/users"
-        var stringRequset = object : StringRequest(Request.Method.POST, api, { res ->
-
+        var stringRequset = object : StringRequest(Method.POST, api, { res ->
             Log.e("TAG", "volleypost: $res")
         },
             { error ->
@@ -32,6 +31,7 @@ class volleypostApi : AppCompatActivity() {
                 map.put("job", job)
 
                 return map
+
             }
         }
         var requestQueue = Volley.newRequestQueue(this)

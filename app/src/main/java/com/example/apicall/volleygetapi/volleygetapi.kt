@@ -32,14 +32,13 @@ class volleygetapi : AppCompatActivity() {
     private fun volleyapiget() {
 
         var getapi = "https://jsonplaceholder.typicode.com/posts"
-        var jsonArrayRequest = JsonArrayRequest(Request.Method.GET, getapi, null, { response ->
-
+        var jsonArrayRequest = JsonArrayRequest(Request.Method.GET, getapi, null,
+            { response ->
             Log.e("TAG", "volleyapiget: $response")
             var i = 0;
             var list = arrayListOf<volleyget>()
 
             while (i < response.length()) {
-
                 var userId = response.getJSONObject(i).getString("userId")
                 var id = response.getJSONObject(i).getString("id")
                 var title = response.getJSONObject(i).getString("title")
@@ -48,20 +47,18 @@ class volleygetapi : AppCompatActivity() {
                 var m1 = volleyget(userId, id, title, body)
                 list.add(m1)
                 i++
-
             }
             setuprv(list)
-
         }, { error ->
             Log.e("TAG", "volleyapiget: ${error}")
         })
-
-
         var requestQueue = Volley.newRequestQueue(this)
         requestQueue.add(jsonArrayRequest)
+
     }
 
     private fun setuprv(list: ArrayList<volleyget>) {
+
         var adpter = adptervolleyget(this, list)
         var layout = LinearLayoutManager(this)
         rvview.adapter = adpter

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apicall.R
 import com.example.apicall.retrofitgetapi.apiclient.Companion.getRetrofit
+import com.example.apicall.retrofitgetapi.apiclient.Companion.getRetrofitData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,6 +15,7 @@ import retrofit2.Response
 
 class retrofitgetApi : AppCompatActivity() {
     var list = listOf<ArticlesItem?>()
+    var list1 = listOf<DataItem?>()
     lateinit var rvview: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -22,7 +24,9 @@ class retrofitgetApi : AppCompatActivity() {
         setContentView(R.layout.activity_retrofitget_api)
         rvview = findViewById<RecyclerView>(R.id.rvview)
 
-        getnews("us", "business")
+//        getnews("us", "business")
+
+        getnewsData()
 
     }
 
@@ -46,9 +50,35 @@ class retrofitgetApi : AppCompatActivity() {
                     Log.e("TAG", "onFailure: ${t.message}")
                 }
 
+
             })
 
 
+    }
+
+
+    private fun getnewsData() {
+
+        var apiInterface = getRetrofitData().create(apiInterface::class.java)
+
+        apiInterface.getnewsdata("Nation", "Population")
+            .enqueue(object : Callback<Data> {
+                override fun onResponse(call: Call<Data>, response: Response<Data>) {
+                    Log.e("TAG", "onResponse: ${response.body()}")
+
+                    var newsmodeldata = response.body()
+                    list1 = newsmodeldata!!.data!!
+
+                    setuprv()
+                }
+
+
+                override fun onFailure(call: Call<Data>, t: Throwable) {
+                    Log.e("TAG", "onFailure: ${t.message}")
+                }
+
+
+            })
     }
 
     private fun setuprv() {

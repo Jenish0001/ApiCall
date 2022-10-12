@@ -41,7 +41,6 @@ class AdpterRetrofitGet(val retrofitgetApi: retrofitgetApi, val list: List<Artic
         holder.txt_title.text = list[position]?.title
         holder.txt_title_name.text = list[position]?.source!!.name
 
-
     }
 
     override fun getItemCount(): Int {

@@ -16,7 +16,49 @@ class apiclient {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
             return retrofit
+
         }
+
+        var BASE_API="https://reqres.in/api/"
+        fun postRetrofit() :Retrofit
+        {
+            var retrofit =Retrofit.Builder().baseUrl(BASE_API).addConverterFactory(GsonConverterFactory.create()).build()
+            return  retrofit
+        }
+
+        var BASE_APIP="https://fakestoreapi.com/"
+        fun postRetrofitProduct() :Retrofit
+        {
+
+            var retrofit =Retrofit.Builder().baseUrl(BASE_APIP).addConverterFactory(GsonConverterFactory.create()).build()
+            return  retrofit
+
+        }
+
+        var BASE_URLDATA = "https://datausa.io/api/"
+
+        fun getRetrofitData(): Retrofit {
+
+            var retrofit = Retrofit.Builder()
+                .baseUrl(BASE_URLDATA)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            return retrofit
+        }
+
+
+//         pagination api
+        var BASE_URLDATAPAGE = "https://jsonplaceholder.typicode.com/"
+
+        fun getRetrofitDataPagination(): Retrofit {
+
+            var retrofit = Retrofit.Builder()
+                .baseUrl(BASE_URLDATAPAGE)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            return retrofit
+        }
+
 
     }
 }
